@@ -5,9 +5,12 @@
 
 import { useState } from "react";
 import { saveToken } from "./auth.service";
+import { useRouter } from "next/navigation";
 
 // Define e exporta o componente principal da página.
 export default function LoginPage() {
+
+    const router = useRouter();
 
     // 'useState' avisa o HTML que a variável foi atualizada e a tela deve ser atualizada novamente
     // showPassword é a variável
@@ -54,6 +57,9 @@ export default function LoginPage() {
 
         // substituído: localStorage.setItem("acess_token", data.acess_token);
         saveToken(data.acess_token);
+
+        // redirecionar
+        router.replace("/admin");
 
     }
     
