@@ -53,10 +53,10 @@ export default function LoginPage() {
         // converte a resposta para a variável 'data'
         const data = await response.json();
 
-        console.log(data.acess_token);
+        console.log(data.access_token);
 
-        // substituído: localStorage.setItem("acess_token", data.acess_token);
-        saveToken(data.acess_token);
+        // substituído: localStorage.setItem("acess_token", data.access_token);
+        saveToken(data.access_token);
 
         // redirecionar
         router.replace("/admin");
